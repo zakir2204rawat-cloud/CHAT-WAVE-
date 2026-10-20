@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatWave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN / REGISTER -->
+    <section id="authScreen" class="auth-screen">
+        <form id="authForm" class="auth-card">
+            <h1>💬 ChatWave</h1>
+            <p>Your conversations, your space.</p>
+
+            <div class="auth-tabs">
+                <button type="button" id="loginTab" class="active">Login</button>
+                <button type="button" id="registerTab">Register</button>
+            </div>
+
+            <label for="authName" id="nameLabel" hidden>Your name</label>
+            <input id="authName" placeholder="Your name" hidden>
+
+            <label for="authEmail">Email</label>
+            <input id="authEmail" type="email" placeholder="you@example.com" required>
+
+            <label for="authPassword">Password</label>
+            <input id="authPassword" type="password" placeholder="Enter a password" required>
+
+            <button class="primary" type="submit" id="authSubmit">Login</button>
+            <p id="authMessage" class="muted"></p>
+            <small>Demo only: don't use a real password.</small>
+        </form>
+    </section>
+
+    <!-- MAIN APP -->
+    <div id="app" class="app" hidden>
+
+        <aside class="sidebar" id="sidebar">
+            <div class="brand-row">
+                <h2>💬 ChatWave</h2>
+                <button id="themeButton" title="Toggle dark mode">🌙</button>
+            </div>
+
+            <button id="profileButton" class="profile-button">
+                <span class="avatar my-avatar" id="myAvatar">J</span>
+                <span><strong id="myName">You</strong><small>My profile</small></span>
+            </button>
+
+            <input id="contactSearch" class="search" placeholder="🔍 Search contacts...">
+
+            <div id="contacts" class="contacts"></div>
+
+            <button id="logoutButton" class="logout-button">Log out</button>
+        </aside>
+
+        <main class="chat" id="chatPanel">
+            <header class="chat-header">
+                <button id="backButton" class="back-button" title="Back to contacts">←</button>
+                <div class="avatar" id="chatAvatar">A</div>
+
+                <div class="contact-info">
+                    <strong id="chatName">Amy</strong>
+                    <small id="chatStatus">Online</small>
+                    <small id="typingIndicator" hidden>Typing...</small>
+                </div>
+
+                <button id="pinButton" title="Pin conversation">📌 Pin</button>
+                <button id="clearButton" title="Clear conversation">🗑️ Clear</button>
+            </header>
+
+            <div id="messages" class="messages"></div>
+
+            <form id="messageForm" class="message-form">
+                <button type="button" id="emojiButton" title="Choose emoji">😊</button>
+                <input id="messageInput" placeholder="Type a message..." autocomplete="off">
+
+                <label class="upload-button" title="Send an image">
+                    📷
+                    <input id="imageInput" type="file" accept="image/*" hidden>
+                </label>
+
+                <button type="submit" class="send-button" title="Send message">➤</button>
+            </form>
+
+            <div id="emojiPicker" class="emoji-picker" hidden></div>
+        </main>
+
+        <!-- PROFILE PANEL -->
+        <section id="profilePanel" class="profile-panel" hidden>
+            <button id="closeProfile" class="close-button">✕</button>
+            <h2>My Profile</h2>
+            <div class="large-avatar" id="profileAvatar">J</div>
+
+            <form id="profileForm">
+                <label for="profileName">Display name</label>
+                <input id="profileName" required maxlength="40">
+
+                <label for="profileAbout">About me</label>
+                <textarea id="profileAbout" maxlength="120"
+                    placeholder="Hey there! I'm using ChatWave."></textarea>
+
+                <button class="primary" type="submit">Save profile</button>
+            </form>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
