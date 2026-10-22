@@ -26,11 +26,11 @@
             <input id="authEmail" type="email" placeholder="you@example.com" required>
 
             <label for="authPassword">Password</label>
-            <input id="authPassword" type="password" placeholder="Enter a password" required>
+            <input id="authPassword" type="password" placeholder="Enter a password" minlength="6" required>
 
             <button class="primary" type="submit" id="authSubmit">Login</button>
             <p id="authMessage" class="muted"></p>
-            <small>Demo only: don't use a real password.</small>
+            <small>At least 6 characters.</small>
         </form>
     </section>
 
@@ -107,6 +107,8 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
